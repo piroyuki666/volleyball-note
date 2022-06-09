@@ -51,4 +51,4 @@ production:
   <<: *default
   database: volleyball_note_production
   username: volleyball_note
-  password: <%= ENV['VOLLEYBALL_NOTE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['volleyball_note_DATABASE_PASSWORD'] %>
