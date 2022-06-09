@@ -1,0 +1,28 @@
+<mxfile host="65bd71144e">
+    <diagram id="0xHAKh3GY6HDe9JZKsBN" name="ページ1">
+        <mxGraphModel dx="816" dy="632" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="練習内容、試合結果表示" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="70" width="690" height="480" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="フッター" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="550" width="690" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="タイトル　+　チーム名（編集可）&lt;br&gt;ユーザー名" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="10" width="690" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="チームメンバー一覧" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="70" width="120" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="練習一覧" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="70" width="120" height="480" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="試合結果" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="310" width="120" height="240" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
