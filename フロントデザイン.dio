@@ -11,16 +11,19 @@
                     <mxGeometry x="50" y="550" width="690" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="タイトル　+　チーム名（編集可）&lt;br&gt;ユーザー名" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="50" y="10" width="690" height="60" as="geometry"/>
+                    <mxGeometry x="50" y="10" width="570" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="チームメンバー一覧" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="620" y="70" width="120" height="240" as="geometry"/>
+                    <mxGeometry x="620" y="10" width="120" height="250" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="練習一覧" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="50" y="70" width="120" height="480" as="geometry"/>
+                    <mxGeometry x="50" y="70" width="120" height="240" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="試合結果" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="620" y="310" width="120" height="240" as="geometry"/>
+                    <mxGeometry x="50" y="310" width="120" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="コメント一覧&lt;br&gt;（伝言板）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="260" width="120" height="290" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
