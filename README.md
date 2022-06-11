@@ -9,7 +9,7 @@
 usersテーブル
 |レコード|型|オプション|
 |---|---|---|
-|nickname|string|not_null|
+|name|string|not_null|
 |encrypted_password|string||
 |age|integer||
 |sex|integer||
