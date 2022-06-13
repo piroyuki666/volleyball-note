@@ -24,6 +24,7 @@
   <div class='right-contents'>
     <%#/右上%>
     <div class='login-user-name'>
+    <% if current_user.nil? %>
       <%= form_with model: @user, url: users_path, local: true do |f| %>
         <div class="field">
             <%= f.label :名前　　　　　　 %>
@@ -49,10 +50,12 @@
           <%= f.submit "新規登録" %>
         </div>
       <% end %>
+    <% end %>
     </div>
     <%#/右上%>
     <%#/右中%>
     <div class='team-members'>
+    <% if current_user.nil? %>
       <%= form_with model: @user, url: login_path, local: true do |f| %>
       <div class="field">
         <%= f.label :名前　　　 %><br>
@@ -66,12 +69,15 @@
         <%= f.submit "ログイン" %>
       </div>
       <% end %>
+    <% end %>
     </div>
     <%#/右中%>
 
     <%#右下%>
     <div class='comments'>
-      <%= link_to "ログアウト", logout_path, method: :delete %>
+      <% unless current_user.nil? %>
+        <%= link_to "ログアウト", logout_path, method: :delete %>
+      <% end %>
     </div>
     <%#/右下%>
   </div>
