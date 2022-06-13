@@ -21,7 +21,7 @@
 
 /*中央*/
 .center-contents{
-  width: 80vw;
+  width: 70vw;
   height: 600px;
   display: flex;
   align-items: center;
@@ -35,17 +35,17 @@
 
 /*右側サイドバー*/
 .right-contents{
-  width: 20vw;
+  width: 30vw;
   height: 600px;
   display: flex;
   flex-direction: column;
 }
 .login-user-name{
-  height: 100px;
+  height: 150px;
   background-color: aquamarine;
 }
 .team-members{
-  height: 200px;
+  height: 150px;
   background-color: rgba(127, 255, 212, 0.778);
 }
 .comments{
