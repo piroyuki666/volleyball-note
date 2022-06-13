@@ -26,10 +26,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgb(233, 233, 155);
 }
 .training-content{
   height: 600px;
-  background-color: rgb(233, 233, 155);
 }
 /*中央*/
 
