@@ -22,35 +22,58 @@
 
   <%#右側メニュー%>
   <div class='right-contents'>
+    <%#/右上%>
     <div class='login-user-name'>
       <%= form_with model: @user, url: users_path, local: true do |f| %>
         <div class="field">
-            <%= f.label :名前　　　 %>
+            <%= f.label :名前　　　　　　 %>
             <%= f.text_field :name %>
         </div>
         <div class="field">
-            <%= f.label :パスワード %>
-            <%= f.password_field :password %>
+          <%= f.label :パスワード　　　 %>
+          <%= f.password_field :password %>
         </div>
         <div class="field">
-            <%= f.label :年齢　　　 %>
-            <%= f.password_field :age %>
+          <%= f.label :パスワード再入力 %>
+          <%= f.password_field :password_confirmation %>
         </div>
         <div class="field">
-            <%= f.label :性別　　　 %>
-            <%= f.password_field :sex %>
+          <%= f.label :年齢　　　　　　 %>
+          <%= f.text_field :age %>
+        </div>
+        <div class="field">
+          <%= f.label :性別　　　　　　 %>
+          <%= f.text_field :sex %>
         </div>
         <div>
           <%= f.submit "新規登録" %>
         </div>
       <% end %>
     </div>
+    <%#/右上%>
+    <%#/右中%>
     <div class='team-members'>
-    右中央
+      <%= form_with model: @user, url: login_path, local: true do |f| %>
+      <div class="field">
+        <%= f.label :名前　　　 %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :パスワード %><br>
+        <%= f.password_field :password %>
+      </div>
+      <div>
+        <%= f.submit "ログイン" %>
+      </div>
+      <% end %>
     </div>
+    <%#/右中%>
+
+    <%#右下%>
     <div class='comments'>
-    右下
+      <%= link_to "ログアウト", logout_path, method: :delete %>
     </div>
+    <%#/右下%>
   </div>
   <%#/右側メニュー%>
 </div>

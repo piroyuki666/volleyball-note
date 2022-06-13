@@ -41,11 +41,11 @@
   flex-direction: column;
 }
 .login-user-name{
-  height: 120px;
+  height: 150px;
   background-color: aquamarine;
 }
 .team-members{
-  height: 180px;
+  height: 150px;
   background-color: rgba(127, 255, 212, 0.778);
 }
 .comments{
