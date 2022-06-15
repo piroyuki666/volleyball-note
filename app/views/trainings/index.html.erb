@@ -3,20 +3,63 @@
 <div class='main'>
   <%#左側メニュー%>
   <div class='left-contents'>
+    <div class='note-name'>
+      所属チームor個人
+    </div>
     <div class='training-menu'>
-    左上
+      <% @trainings.each do |training| %>
+        <li>
+          <%= training.title %>
+        </li>
+      <% end %>
     </div>
     <div class='tournament-result'>
-    左下
+      試合の記録
     </div>
   </div>
   <%#/左側メニュー%>
 
   <%#中央メイン%>
   <div class='center-contents'>
+    <%#中央メイン上部%>
     <div class='training-content'>
-    中央メイン
     </div>
+    <%#中央メイン上部%>
+    <%#中央メイン下部%>
+    <div class='training-post'>
+      <% unless current_user.nil? %>
+        <div class='training-post-left'>
+          <%= form_with model: @training, url: trainings_path, local: true do |f| %>
+          <div class='training-title'>
+            <%= f.label :タイトル %>
+            <%= f.text_field :title, class:"field" %>
+          </div>
+          <div class='training-time'>
+            <%= f.label :所用時間 %>
+            <%= f.text_field :time, class:"mini-field" %>分
+          </div>
+          <div class='training-persons'>
+            <%= f.label :必要人数 %>
+            <%= f.text_field :persons, class:"mini-field" %>人
+          </div>
+          <div>
+            <%= f.label :疲労度 %>
+            <%= f.collection_select(:fatigue_id, Fatigue.all, :id, :name, {}, {class:"category-box", id:"training-fatigue"}) %>
+          </div>
+        </div>
+        <div class='training-post-center'>
+          <%= f.label :詳細 %><br>
+          <%= f.text_area :content, class:"text" %>
+        </div>
+        <div class='training-post-right'>
+        </div>
+        <div class="post-button">
+          <%= f.submit "投稿する", class:"post" %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%#/中央メイン下部%>
   </div>
   <%#/中央メイン%>
 
@@ -26,28 +69,26 @@
     <div class='login-user-name'>
     <% if current_user.nil? %>
       <%= form_with model: @user, url: users_path, local: true do |f| %>
-        <div class="field">
-            <%= f.label :名前　　　　　　 %>
-            <%= f.text_field :name %>
-        </div>
-        <div class="field">
-          <%= f.label :パスワード　　　 %>
-          <%= f.password_field :password %>
-        </div>
-        <div class="field">
-          <%= f.label :パスワード再入力 %>
-          <%= f.password_field :password_confirmation %>
-        </div>
-        <div class="field">
-          <%= f.label :年齢　　　　　　 %>
-          <%= f.text_field :age %>
-        </div>
-        <div class="field">
-          <%= f.label :性別　　　　　　 %>
-          <%= f.text_field :sex %>
+        <div>
+          <%= f.label :名前　　　　　　 %>
+          <%= f.text_field :name, class:"field" %>
         </div>
         <div>
-          <%= f.submit "新規登録" %>
+          <%= f.label :パスワード　　　 %>
+          <%= f.password_field :password, class:"field" %>
+        </div>
+        <div>
+          <%= f.label :パスワード再入力 %>
+          <%= f.password_field :password_confirmation, class:"field" %>
+        </div>
+        <div>
+          <%= f.label :年齢 %>
+          <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"category-box", id:"user-age"}) %>
+          <%= f.label :性別 %>
+          <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"category-box", id:"user-sex"}) %>
+        </div>
+        <div>
+          <%= f.submit "新規登録", class:"post" %>
         </div>
       <% end %>
     <% end %>
@@ -55,29 +96,25 @@
     <%#/右上%>
     <%#/右中%>
     <div class='team-members'>
-    <% if current_user.nil? %>
-      <%= form_with model: @user, url: login_path, local: true do |f| %>
-      <div class="field">
-        <%= f.label :名前　　　 %><br>
-        <%= f.text_field :name %>
-      </div>
-      <div class="field">
-        <%= f.label :パスワード %><br>
-        <%= f.password_field :password %>
-      </div>
-      <div>
-        <%= f.submit "ログイン" %>
-      </div>
+      <% if current_user.nil? %>
+        <%= form_with model: @user, url: login_path, local: true do |f| %>
+          <div>
+            <%= f.label :名前　　　　　　 %>
+            <%= f.text_field :name, class:"field" %>
+          </div>
+          <div>
+            <%= f.label :パスワード　　　 %>
+            <%= f.password_field :password, class:"field" %>
+          </div>
+          <div>
+            <%= f.submit "ログイン", class:"post" %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
     </div>
     <%#/右中%>
-
     <%#右下%>
     <div class='comments'>
-      <% unless current_user.nil? %>
-        <%= link_to "ログアウト", logout_path, method: :delete %>
-      <% end %>
     </div>
     <%#/右下%>
   </div>

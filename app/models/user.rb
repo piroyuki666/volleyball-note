@@ -4,4 +4,6 @@ class User < ApplicationRecord
             uniqueness: true
   validates :password, length: { minimum: 4, maximum: 8 },
             numericality: { only_integer: true, message: 'パスワードは半角数字４〜８桁にして下さい' }
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :age, :sex
 end

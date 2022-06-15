@@ -9,20 +9,21 @@
 usersテーブル
 |レコード|型|オプション|
 |---|---|---|
-|name|string|not_null|
-|encrypted_password|string||
-|age|integer||
-|sex|integer||
+|name              |string |not_null|
+|encrypted_password|string |        |
+|age               |integer|        |
+|sex               |integer|        |
 
 ---
 
 trainingsテーブル
 |レコード|型|オプション|
 |---|---|---|
-|title|string|not_null|
-|content|text||
-|time|time||
-|sex|integer||
+|title  |string |not_null|
+|content|text   |        |
+|time   |integer|        |
+|persons|integer|        |
+|fatigue|integer|        |
 
 ---
 

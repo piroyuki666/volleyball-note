@@ -1,20 +1,37 @@
 .top-page-header{
-  width: 100vw;
-  height: 120px;
+  width: 1227px;
+  height: 80px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  background-color: rgb(212, 203, 192);
+  background-color: rgb(89, 93, 139);
+  color: azure;
+}
+/*ヘッダー左側*/
+.header-left{
+  width: 900px;
+  display: flex;
+  justify-content: center;
 }
 .app-name{
-  width: 20vw;
-  padding-left: 20px;
+  font-size: 40px;
 }
-.title{
-  width: 60vw;
+/*ヘッダー右側*/
+.header-right{
+  width: 327px;
+  display: flex;
+  flex-direction: column;
+}
+.user-name{
+  border: 1px solid black;
   padding-left: 20px;
 }
 .team-name{
-  width: 20vw;
+  border: 1px solid black;
   padding-left: 20px;
+}
+.logout-button{
+  text-decoration: none;
+  color: azure;
+  text-align: right;
+  padding-right: 20px;
 }
