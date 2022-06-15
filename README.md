@@ -6,29 +6,63 @@
 - 是非ご活用ください。
 
 # テーブル設計図
-usersテーブル
-|レコード|型|オプション|
-|---|---|---|
+
+## usersテーブル
+|カラム             |型     |オプション|
+|------------------|-------|--------|
 |name              |string |not_null|
 |encrypted_password|string |        |
 |age               |integer|        |
 |sex               |integer|        |
 
+### Association
+- has_many :trainings
+- has_many :team_users
+- mas_many :teams, through: :team_users
 ---
 
-trainingsテーブル
-|レコード|型|オプション|
+## team_usersテーブル
+|カラム |型         |オプション|
+|------|-----------|--------|
+|user  |references |null: false, foreign_key: true|
+|team  |references |null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :team
+---
+
+## teamsテーブル
+|カラム    |型     |オプション|
+|---------|-------|--------|
+|name     |string |not_null|
+
+### Association
+- has_many :trainings
+- has_many :team_users
+- has_many :users, through: :team_users
+
+---
+
+## trainingsテーブル
+|カラム|型|オプション|
 |---|---|---|
 |title  |string |not_null|
 |content|text   |        |
 |time   |integer|        |
 |persons|integer|        |
 |fatigue|integer|        |
+|user   |references |null: false, foreign_key: true|
+|team   |references |null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :team
 
 ---
 
-commentsテーブル
-|レコード|型|オプション|
+## commentsテーブル
+|カラム|型|オプション|
 |---|---|---|
 |comment|text|not_null|
 

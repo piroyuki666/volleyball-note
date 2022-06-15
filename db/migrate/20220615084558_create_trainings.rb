@@ -6,6 +6,8 @@ class CreateTrainings < ActiveRecord::Migration[6.0]
       t.integer :time
       t.integer :fatigue_id
       t.integer :persons
+      t.references :team, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       
       t.timestamps
     end
