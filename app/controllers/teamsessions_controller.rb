@@ -1,12 +1,12 @@
-class SessionsController < ApplicationController
+class TeamsessionsController < ApplicationController
   def new
   end
 
   def create
-    user = User.find_by_name(params[:name])
+    team = Team.find_by_name(params[:name])
     @trainings = Training.all
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
+    if team
+      session[:team_id] = team.id
       redirect_to root_path, notice: "ログインに成功しました"
     else
       flash.now[:alert] = "名前かパスワードが間違っています"
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    session[:team_id] = nil
     redirect_to root_path, notice: "ログアウトしました"
   end
 end

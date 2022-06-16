@@ -1,55 +1,135 @@
 .main{
   display: flex;
 }
-
+.field{
+  width: 120px;
+  border-radius: 5px;
+}
+.mini-field{
+  width: 20px;
+  border-radius: 5px;
+}
 /*左のサイドバー*/
 .left-contents{
-  width: 20vw;
+  width: 200px;
   height: 600px;
   display: flex;
   flex-direction: column;
 }
+.note-name{
+  height: 30px;
+  border: 1px solid black;
+  text-align: left;
+  padding-left: 30px;
+}
 .training-menu{
   height: 300px;
-  background-color: aqua;
+  border: 1px solid black;
+  text-align: left;
+  padding-left: 30px;
 }
 .tournament-result{
-  height: 300px;
-  background-color: aquamarine;
+  height: 270px;
+  border: 1px solid black;
 }
 /*左のサイドバー*/
 
 /*中央*/
 .center-contents{
-  width: 70vw;
+  width: 700px;
   height: 600px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+/*中央上部*/
 .training-content{
-  height: 600px;
-  background-color: rgb(233, 233, 155);
+  height: 400px;
+  width: 700px;
+  border: 1px solid black;
+}
+
+/*中央下部*/
+.training-post{
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.training-post-left{
+  height: 180px;
+  width: 100px;
+  margin: 0 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.training-title{
+  height: 45px;
+  width: 130px;
+  margin-top: 7px;
+  border: 1px solid black;
+}
+.training-time{
+  height: 20px;
+  width: 130px;
+  margin-top: 7px;
+  border: 1px solid black;
+}
+.training-persons{
+  height: 20px;
+  width: 130px;
+  margin-top: 7px;
+  border: 1px solid black;
+}
+.training-fatigue{
+  height: 20px;
+  width: 130px;
+  margin-top: 7px;
+  border: 1px solid black;
+}
+.training-post-center{
+  height: 160px;
+  margin: 7 20px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+.training-post-right{
+  height: 180px;
+  width: 200px;
+  margin: 7 20px;
+  border: 1px solid black;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
 }
 /*中央*/
 
 /*右側サイドバー*/
 .right-contents{
-  width: 30vw;
+  width: 327px;
   height: 600px;
   display: flex;
   flex-direction: column;
 }
 .login-user-name{
   height: 150px;
-  background-color: aquamarine;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
 }
 .team-members{
   height: 150px;
-  background-color: rgba(127, 255, 212, 0.778);
+  border: 1px solid black;
+  padding-left: 20px;
 }
 .comments{
   height: 300px;
-  background-color: rgba(127, 255, 212, 0.439);
+  border: 1px solid black;
 }
 /*右側サイドバー*/
