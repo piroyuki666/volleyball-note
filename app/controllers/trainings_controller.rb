@@ -3,8 +3,12 @@ class TrainingsController < ApplicationController
   def index
     @user = User.new
     @training = Training.new
+    @team = Team.new
     if session[:user_id]
       @login_user = User.find(session[:user_id])
+    end
+    if session[:team_id]
+      @login_team = Team.find(session[:team_id])
     end
     @trainings = Training.all
   end
@@ -20,6 +24,6 @@ class TrainingsController < ApplicationController
   private
 
   def training_params
-    params.require(:training).permit(:title, :time, :persons, :content, :fatigue_id)
+    params.require(:training).permit(:title, :time, :persons, :content, :fatigue_id).merge(user_id: session[:team_id], team_id: session[:team_id])
   end
 end
