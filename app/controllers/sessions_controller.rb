@@ -1,21 +1,18 @@
 class SessionsController < ApplicationController
-  def new
-  end
-
   def create
     user = User.find_by_name(params[:name])
     @trainings = Training.all
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path, notice: "ログインに成功しました"
+      redirect_to root_path
     else
-      flash.now[:alert] = "名前かパスワードが間違っています"
       render "trainings/index"
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: "ログアウトしました"
+    session[:team_id] = nil
+    redirect_to root_path
   end
 end

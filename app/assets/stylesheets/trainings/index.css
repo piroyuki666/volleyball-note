@@ -6,7 +6,7 @@
   border-radius: 5px;
 }
 .mini-field{
-  width: 20px;
+  width: 40px;
   border-radius: 5px;
 }
 /*左のサイドバー*/
@@ -28,7 +28,7 @@
   text-align: left;
   padding-left: 30px;
 }
-.tournament-result{
+.left-bottom{
   height: 270px;
   border: 1px solid black;
 }
@@ -55,57 +55,43 @@
 .training-post{
   height: 200px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 .training-post-left{
-  height: 180px;
-  width: 100px;
-  margin: 0 20px;
-  border-radius: 30px;
+  height: 160px;
+  width: 150px;
+  margin: 20 0px;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 .training-title{
-  height: 45px;
-  width: 130px;
-  margin-top: 7px;
+  text-align: center;
   border: 1px solid black;
 }
 .training-time{
-  height: 20px;
-  width: 130px;
-  margin-top: 7px;
+  text-align: center;
   border: 1px solid black;
 }
 .training-persons{
-  height: 20px;
-  width: 130px;
-  margin-top: 7px;
+  text-align: center;
   border: 1px solid black;
 }
 .training-fatigue{
-  height: 20px;
-  width: 130px;
-  margin-top: 7px;
   border: 1px solid black;
 }
 .training-post-center{
   height: 160px;
-  margin: 7 20px;
+  margin: 20 0px;
   padding: 10px;
   border: 1px solid black;
-  border-radius: 30px;
 }
 .training-post-right{
-  height: 180px;
+  height: 160px;
   width: 200px;
-  margin: 7 20px;
+  margin: 20 0px;
+  padding: 10px;
   border: 1px solid black;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
 }
 /*中央*/
 
@@ -127,6 +113,11 @@
   height: 150px;
   border: 1px solid black;
   padding-left: 20px;
+}
+.teamlogout-button{
+  text-decoration: none;
+  text-align: right;
+  margin-right: 20px;
 }
 .comments{
   height: 300px;
