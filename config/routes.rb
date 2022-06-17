@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
   root to: 'trainings#index'
   resources :trainings
   resources :users, only: [:create]

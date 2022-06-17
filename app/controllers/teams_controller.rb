@@ -4,9 +4,9 @@ class TeamsController < ApplicationController
     @trainings = Training.all
     if team.save
       session[:team_id] = team.id
-      redirect_to root_path, notice: "新規登録に成功しました"
+      redirect_to root_path
     else
-      render "trainings/index", notice: "新規登録に失敗しました"
+      render "trainings/index"
     end
   end
 

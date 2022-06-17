@@ -7,15 +7,14 @@ class TeamsessionsController < ApplicationController
     @trainings = Training.all
     if team
       session[:team_id] = team.id
-      redirect_to root_path, notice: "ログインに成功しました"
+      redirect_to root_path
     else
-      flash.now[:alert] = "名前かパスワードが間違っています"
       render "trainings/index"
     end
   end
 
   def destroy
     session[:team_id] = nil
-    redirect_to root_path, notice: "ログアウトしました"
+    redirect_to root_path
   end
 end
