@@ -3,7 +3,6 @@ class TrainingsController < ApplicationController
   def index
     @user = User.new
     @training = Training.new
-    @team = Team.new
     @trainings = Training.all
   end
   def create
@@ -18,6 +17,6 @@ class TrainingsController < ApplicationController
   private
 
   def training_params
-    params.require(:training).permit(:title, :time, :persons, :content, :fatigue_id).merge(user_id: session[:user_id], team_id: session[:team_id])
+    params.require(:training).permit(:title, :time, :persons, :content, :fatigue_id).merge(user_id: session[:user_id])
   end
 end
