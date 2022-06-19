@@ -4,10 +4,8 @@
   <%#左側メニュー%>
   <div class='left-contents'>
     <div class='note-name'>
-      <% if current_user && current_team %>
-        <%= current_team.name %>
-      <% elsif current_user %>
-        <%= current_user.name %>
+      <% if current_user %>
+        <%= current_user.name %>さんのページ一覧
       <% end %>
     </div>
     <div class='training-menu'>
@@ -69,7 +67,7 @@
   <%#右側メニュー%>
   <div class='right-contents'>
     <%#/右上%>
-    <div class='login-user-name'>
+    <div class='user-new'>
     <% if current_user.nil? %>
       <%= form_with model: @user, url: users_path, local: true do |f| %>
         <div>
@@ -94,24 +92,11 @@
           <%= f.submit "新規登録", class:"post" %>
         </div>
       <% end %>
-    <% else %>
-      <%= form_with model: @team, url: teams_path, local: true do |f| %>
-        <div>
-          チーム登録フォーム
-        </div>
-        <div>
-          <%= f.label :チーム名 %>
-          <%= f.text_field :name, class:"field" %>
-        </div>
-        <div>
-          <%= f.submit "新規登録", class:"post" %>
-        </div>
-      <% end %>
     <% end %>
     </div>
     <%#/右上%>
     <%#/右中%>
-    <div class='team-members'>
+    <div class='user-login'>
       <% if current_user.nil? %>
         <%= form_with model: @user, url: login_path, local: true do |f| %>
           <div>
@@ -126,9 +111,6 @@
             <%= f.submit "ログイン", class:"post" %>
           </div>
         <% end %>
-        <% else %>
-        所属チームでログインするか個人ノートへログイン
-        <%= link_to "個人ノート", teamlogout_path, method: :delete, class:"teamlogout-button" %>
       <% end %>
     </div>
     <%#/右中%>
