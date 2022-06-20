@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def create
     user = User.new(user_params)
-    @trainings = Training.all
+    @trainings = Training.where(user_id: session[:user_id])
     if user.save
       session[:user_id] = user.id
       redirect_to root_path

@@ -9,13 +9,57 @@
       <% end %>
     </div>
     <div class='training-menu'>
-      <% @trainings.each do |training| %>
-        <li>
-          <%= training.title %>
-        </li>
-      <% end %>
+        <% @trainings.each do |training| %>
+          <li>
+            <%= training.title %>
+          </li>
+        <% end %>
     </div>
     <div class='left-bottom'>
+      <div class='user-new'>
+        <% if current_user.nil? %>
+          <%= form_with model: @user, url: users_path, local: true do |f| %>
+          <div>
+            <%= f.label :個人名orチーム名 %>
+            <%= f.text_field :name, class:"field" %>
+          </div>
+          <div>
+            <%= f.label :パスワード　　　 %>
+            <%= f.password_field :password, class:"field" %>
+          </div>
+          <div>
+            <%= f.label :パスワード再入力 %>
+            <%= f.password_field :password_confirmation, class:"field" %>
+          </div>
+          <div>
+            <%= f.label :年齢 %>
+            <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"category-box", id:"user-age"}) %>
+            <%= f.label :性別 %>
+            <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"category-box", id:"user-sex"}) %>
+          </div>
+          <div>
+            <%= f.submit "新規登録", class:"post" %>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class='user-login'>
+        <% if current_user.nil? %>
+          <%= form_with model: @user, url: login_path, local: true do |f| %>
+          <div>
+            <%= f.label :名前　　　　　　 %>
+            <%= f.text_field :name, class:"field" %>
+          </div>
+          <div>
+            <%= f.label :パスワード　　　 %>
+            <%= f.password_field :password, class:"field" %>
+          </div>
+          <div>
+            <%= f.submit "ログイン", class:"post" %>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
   <%#/左側メニュー%>
@@ -63,64 +107,6 @@
     <%#/中央メイン下部%>
   </div>
   <%#/中央メイン%>
-
-  <%#右側メニュー%>
-  <div class='right-contents'>
-    <%#/右上%>
-    <div class='user-new'>
-    <% if current_user.nil? %>
-      <%= form_with model: @user, url: users_path, local: true do |f| %>
-        <div>
-          <%= f.label :名前　　　　　　 %>
-          <%= f.text_field :name, class:"field" %>
-        </div>
-        <div>
-          <%= f.label :パスワード　　　 %>
-          <%= f.password_field :password, class:"field" %>
-        </div>
-        <div>
-          <%= f.label :パスワード再入力 %>
-          <%= f.password_field :password_confirmation, class:"field" %>
-        </div>
-        <div>
-          <%= f.label :年齢 %>
-          <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"category-box", id:"user-age"}) %>
-          <%= f.label :性別 %>
-          <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"category-box", id:"user-sex"}) %>
-        </div>
-        <div>
-          <%= f.submit "新規登録", class:"post" %>
-        </div>
-      <% end %>
-    <% end %>
-    </div>
-    <%#/右上%>
-    <%#/右中%>
-    <div class='user-login'>
-      <% if current_user.nil? %>
-        <%= form_with model: @user, url: login_path, local: true do |f| %>
-          <div>
-            <%= f.label :名前　　　　　　 %>
-            <%= f.text_field :name, class:"field" %>
-          </div>
-          <div>
-            <%= f.label :パスワード　　　 %>
-            <%= f.password_field :password, class:"field" %>
-          </div>
-          <div>
-            <%= f.submit "ログイン", class:"post" %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <%#/右中%>
-    <%#右下%>
-    <div class='comments'>
-    
-    </div>
-    <%#/右下%>
-  </div>
-  <%#/右側メニュー%>
 </div>
 
 <%= render "shared/footer" %>
