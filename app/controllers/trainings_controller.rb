@@ -3,7 +3,7 @@ class TrainingsController < ApplicationController
   def index
     @user = User.new
     @training = Training.new
-    @trainings = Training.all
+    @trainings = Training.where(user_id: session[:user_id])
   end
   def create
     training = Training.new(training_params)
