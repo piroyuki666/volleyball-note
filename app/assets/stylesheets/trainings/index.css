@@ -19,8 +19,8 @@
 .note-name{
   height: 30px;
   border: 1px solid black;
-  text-align: left;
-  padding-left: 10px;
+  text-align: center;
+  padding: auto;
 }
 .training-menu{
   height: 300px;
