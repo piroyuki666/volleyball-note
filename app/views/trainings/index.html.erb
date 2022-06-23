@@ -108,6 +108,17 @@
           </div>
         </div>
       </div>
+      <ul id="training-all">
+        <% @trainings.each do |training| %>
+          <li>
+            <input type="hidden", value="<%= training.title %>">
+            <input type="hidden", value="<%= training.time %>">
+            <input type="hidden", value="<%= training.persons %>">
+            <input type="hidden", value="<%= training.fatigue.name %>">
+            <input type="hidden", value="<%= training.content %>">
+          </li>
+        <% end %>
+      </ul>
     </div>
     <%#中央メイン上部%>
     <%#中央メイン下部%>

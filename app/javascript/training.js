@@ -1,11 +1,13 @@
 window.addEventListener('load', function(){
   $('#training > li').each(function(i){
-    $(this).attr('data-id','training' + (i + 1));
+    $(this).attr('id','training' + (i + 1));
   });
 
-  $('#training > li').on('click',function(){
-    const title = $(this).data('id');
-    $('#selected-title').text(title);
+  
+
+  $('#training1').on('click',function(){
+    const title = document.getElementById("training-all");
+    console.log(title);
   });
 })
 
