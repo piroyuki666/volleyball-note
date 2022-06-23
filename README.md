@@ -1,72 +1,34 @@
-# volleyball-note
+# アプリケーション名
+VOLLEYBALL-NOTE
+
+# アプリケーション概要
 - このアプリは練習の記録を管理する為のアプリです。
 - ユーザー登録を行う事で練習ノートを作れます。
 - チーム登録を行う事でチームの練習ノートを作成でき、チームメンバー同士で共有できます。
 - コメント機能にてチームメンバー同士でやりとりできます。
 - 是非ご活用ください。
 
-# テーブル設計図
+# URL
+- https://volleyball-note.herokuapp.com/
 
-## usersテーブル
-|カラム             |型     |オプション|
-|------------------|-------|--------|
-|name              |string |not_null|
-|encrypted_password|string |        |
-|age               |integer|        |
-|sex               |integer|        |
+# テスト用アカウント
 
-### Association
-- has_many :trainings
-- has_many :team_users
-- mas_many :teams, through: :team_users
----
+# 利用方法
 
-## team_usersテーブル
-|カラム |型         |オプション|
-|------|-----------|--------|
-|user  |references |null: false, foreign_key: true|
-|team  |references |null: false, foreign_key: true|
+# アプリケーションを作成した背景
 
-### Association
-- belongs_to :user
-- belongs_to :team
----
+# 洗い出した要件
 
-## teamsテーブル
-|カラム    |型     |オプション|
-|---------|-------|--------|
-|name     |string |not_null|
+# 実装した機能についての画像やGIFおよびその説明
 
-### Association
-- has_many :trainings
-- has_many :team_users
-- has_many :users, through: :team_users
+# 実装予定の機能
 
----
+# データベース設計
 
-## trainingsテーブル
-|カラム|型|オプション|
-|---|---|---|
-|title  |string |not_null|
-|content|text   |        |
-|time   |integer|        |
-|persons|integer|        |
-|fatigue|integer|        |
-|user   |references |null: false, foreign_key: true|
-|team   |references |null: false, foreign_key: true|
+# 画面遷移図
 
-### Association
-- belongs_to :user
-- belongs_to :team
+# 開発環境
 
----
+# ローカルでの動作方法
 
-## commentsテーブル
-|カラム|型|オプション|
-|---|---|---|
-|comment|text|not_null|
-
-### Association
-- belongs_to :user
-- belongs_to :team
----
+# 工夫したポイント
