@@ -3,17 +3,19 @@
 <div class='main'>
   <%#左側メニュー%>
   <div class='left-contents'>
-    <div class='note-name'>
+    <div class='note-name' id="note-name">
       <% if current_user %>
         <%= current_user.name %>さんの投稿メニュー
       <% end %>
     </div>
     <div class='training-menu'>
+      <ul id="training">
         <% @trainings.each do |training| %>
           <li>
             <%= training.title %>
           </li>
         <% end %>
+      </ul>
     </div>
     <div class='left-bottom'>
       <div class='user-new'>
@@ -60,6 +62,21 @@
             <%= f.submit "ログイン", class:"post" %>
           </div>
           <% end %>
+        <% else %>
+          <div class="user-new-title">別ユーザーでログイン</div>
+          <%= form_with model: @user, url: login_path, local: true do |f| %>
+          <div>
+            <%= f.label :個人名orチーム名 %>
+            <%= f.text_field :name, class:"field" %>
+          </div>
+          <div>
+            <%= f.label :パスワード　　　 %>
+            <%= f.password_field :password, class:"field" %>
+          </div>
+          <div>
+            <%= f.submit "ログイン", class:"post" %>
+          </div>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -70,12 +87,27 @@
   <div class='center-contents'>
     <%#中央メイン上部%>
     <div class='training-content'>
-      <p>jQuery稼働テスト</p>
-      <script type="text/javascript">
-        $(document).ready(function(){
-          $("p").text("jQuery稼働テスト(稼働中)");
-        });
-      </script>
+      <div class='training1'>
+        <div class='training1-left'>
+          <div id='selected-title'>
+            選択されたタイトル表示
+          </div>
+          <div id='selected-time'>
+            選択された所用時間表示
+          </div>
+          <div id='selected-persons'>
+            選択された必要人数表示
+          </div>
+          <div id='selected-fatigue'>
+            選択された疲労度表示
+          </div>
+        </div>
+        <div class='training1'>
+          <div id='selected-content'>
+            選択されたコンテンツ表示
+          </div>
+        </div>
+      </div>
     </div>
     <%#中央メイン上部%>
     <%#中央メイン下部%>
@@ -103,12 +135,14 @@
         <div class='training-post-center'>
           <%= f.label :詳細 %><br>
           <%= f.text_area :content, class:"text" %>
+          <div class="post-button">
+            <%= f.submit "投稿する", class:"post" %>
+          </div>
         </div>
-        <div class='training-post-right'>
-        </div>
-        <div class="post-button">
-          <%= f.submit "投稿する", class:"post" %>
-        </div>
+
+        <%# <div class='training-post-right'> %>
+        <%# </div> %>
+
         <% end %>
       <% end %>
     </div>
