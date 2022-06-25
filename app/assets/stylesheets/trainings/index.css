@@ -9,6 +9,14 @@
   width: 40px;
   border-radius: 5px;
 }
+textarea {
+  resize: none;
+  width:400px;
+  height:100px;
+}
+ul{
+  list-style: none;
+}
 /*左のサイドバー*/
 .left-contents{
   width: 300px;
@@ -60,25 +68,11 @@
 }
 
 /*中央上部*/
-.training-content{
+.training-select{
   height: 400px;
   width: 900px;
   border-bottom: 1px solid black;
   display: flex;
-}
-.training1{
-  height: 200px;
-  width: 450px;
-  border: 3px solid blue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.training1-left{
-  border: 1px solid black;
-}
-.training1-right{
-  border: 1px solid black;
 }
 /*中央下部*/
 .training-post{
@@ -91,22 +85,21 @@
   width: 150px;
   margin: 20 0px;
   display: flex;
-  align-items: center;
   flex-direction: column;
 }
 .training-title{
+  height: 80px;
   text-align: center;
   border: 1px solid black;
 }
 .training-time{
+  height: 40px;
   text-align: center;
   border: 1px solid black;
 }
 .training-persons{
+  height: 40px;
   text-align: center;
-  border: 1px solid black;
-}
-.training-fatigue{
   border: 1px solid black;
 }
 .training-post-center{

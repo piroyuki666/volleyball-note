@@ -4,7 +4,6 @@ class CreateTrainings < ActiveRecord::Migration[6.0]
       t.string  :title,   null: false
       t.text    :content
       t.integer :time
-      t.integer :fatigue_id
       t.integer :persons
       t.references :user, foreign_key: true
       
