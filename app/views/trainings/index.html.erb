@@ -86,39 +86,11 @@
   <%#中央メイン%>
   <div class='center-contents'>
     <%#中央メイン上部%>
-    <div class='training-content'>
-      <div class='training1'>
-        <div class='training1-left'>
-          <div id='selected-title'>
-            選択されたタイトル表示
-          </div>
-          <div id='selected-time'>
-            選択された所用時間表示
-          </div>
-          <div id='selected-persons'>
-            選択された必要人数表示
-          </div>
-          <div id='selected-fatigue'>
-            選択された疲労度表示
-          </div>
-        </div>
-        <div class='training1'>
-          <div id='selected-content'>
-            選択されたコンテンツ表示
-          </div>
-        </div>
-      </div>
-      <ul id="training-all">
-        <% @trainings.each do |training| %>
-          <li>
-            <input type="hidden", value="<%= training.title %>">
-            <input type="hidden", value="<%= training.time %>">
-            <input type="hidden", value="<%= training.persons %>">
-            <input type="hidden", value="<%= training.fatigue.name %>">
-            <input type="hidden", value="<%= training.content %>">
-          </li>
-        <% end %>
-      </ul>
+    <div class='training-select', id="trainings", data-trainings="<%= @trainings.to_json %>">
+      <div id="selected-title">選択されたタイトル</div>
+      <div id="selected-time">選択された所要時間</div>
+      <div id="selected-persons">選択された人数</div>
+      <div id="selected-content">選択された詳細</div>
     </div>
     <%#中央メイン上部%>
     <%#中央メイン下部%>
@@ -138,10 +110,6 @@
             <%= f.label :必要人数 %>
             <%= f.text_field :persons, class:"mini-field" %>人
           </div>
-          <div>
-            <%= f.label :疲労度 %>
-            <%= f.collection_select(:fatigue_id, Fatigue.all, :id, :name, {}, {class:"category-box", id:"training-fatigue"}) %>
-          </div>
         </div>
         <div class='training-post-center'>
           <%= f.label :詳細 %><br>
@@ -150,10 +118,6 @@
             <%= f.submit "投稿する", class:"post" %>
           </div>
         </div>
-
-        <%# <div class='training-post-right'> %>
-        <%# </div> %>
-
         <% end %>
       <% end %>
     </div>

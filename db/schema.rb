@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2022_06_16_055727) do
     t.string "title", null: false
     t.text "content"
     t.integer "time"
-    t.integer "fatigue_id"
     t.integer "persons"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
