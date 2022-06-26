@@ -49,7 +49,7 @@
       <div class='user-login'>
         <% if current_user.nil? %>
           <div class="user-new-title">ログインはこちらから</div>
-          <%= form_with model: @user, url: login_path, local: true do |f| %>
+          <%= form_with model: @user, url: login_path, method: :post, local: true do |f| %>
           <div>
             <%= f.label :個人名orチーム名 %>
             <%= f.text_field :name, class:"field" %>
@@ -64,7 +64,7 @@
           <% end %>
         <% else %>
           <div class="user-new-title">別ユーザーでログイン</div>
-          <%= form_with model: @user, url: login_path, local: true do |f| %>
+          <%= form_with model: @user, url: login_path, method: :post, local: true do |f| %>
           <div>
             <%= f.label :個人名orチーム名 %>
             <%= f.text_field :name, class:"field" %>
