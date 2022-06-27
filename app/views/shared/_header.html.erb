@@ -1,17 +1,7 @@
 <header class='top-page-header'>
-  <div class='header-left'>
-    <div class="user-name">
-      <% if session[:user_id] %>
-        ようこそ　<%= current_user.name %>　さん
-      <% end %>
-    </div>
-      <% unless current_user.nil? %>
-        <%= link_to "ログアウト", logout_path, method: :delete, class:"logout-button" %>
-      <% end %>
-  </div>
-  <div class='header-right'>
+  <div class='header-center'>
     <div class="app-name">
-      バレーボールノート
+      VolleyBall-Note
     </div>
   </div>
 </header>

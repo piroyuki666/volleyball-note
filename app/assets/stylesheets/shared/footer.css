@@ -1,7 +1,11 @@
 .footer {
-  width: 1200px;
+  width: 1000px;
   height: 30px;
-  padding: vh 0;
   background-color: #6d6b6b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.copy-right{
   text-align: center;
 }

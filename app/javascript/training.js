@@ -51,11 +51,11 @@ const trainingsHash = $('#trainings').data('trainings');
     $('#selected-persons').text(persons);
     $('#selected-content').text(content);
   });
-  $('#training1').on('click',function(){
-    const title = (trainingsHash[0].title);
-    const time = (trainingsHash[0].time);
-    const persons = (trainingsHash[0].persons);
-    const content = (trainingsHash[0].content);
+  $('#training5').on('click',function(){
+    const title = (trainingsHash[4].title);
+    const time = (trainingsHash[4].time);
+    const persons = (trainingsHash[4].persons);
+    const content = (trainingsHash[4].content);
     $('#selected-title').text(title);
     $('#selected-time').text(time);
     $('#selected-persons').text(persons);
