@@ -3,19 +3,21 @@
 <div class='main'>
   <%#左側メニュー%>
   <div class='left-contents'>
-    <div class='note-name' id="note-name">
-      <% if current_user %>
-        <%= current_user.name %>さんの投稿メニュー
-      <% end %>
-    </div>
-    <div class='training-menu'>
-      <ul id="training">
-        <% @trainings.each do |training| %>
-          <li>
-            <%= training.title %>
-          </li>
+    <div class="left-top">
+      <div class='note-name' id="note-name">
+        <% if current_user %>
+          <%= current_user.name %>さんの投稿メニュー
         <% end %>
-      </ul>
+      </div>
+      <div class='training-menu'>
+        <ul id="training">
+          <% @trainings.each do |training| %>
+            <li>
+              <%= training.title %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <div class='left-bottom'>
       <div class='user-new'>
@@ -43,6 +45,13 @@
           <div>
             <%= f.submit "新規登録", class:"post" %>
           </div>
+          <% end %>
+        <% else %>
+          <% if session[:user_id] %>
+            <div class="user-name">
+              ようこそ　<%= current_user.name %>　さん
+            </div>
+            <%= link_to "ログアウト", logout_path, method: :delete, class:"logout-button" %>
           <% end %>
         <% end %>
       </div>
@@ -86,39 +95,51 @@
   <%#中央メイン%>
   <div class='center-contents'>
     <%#中央メイン上部%>
-    <div class='training-select', id="trainings", data-trainings="<%= @trainings.to_json %>">
-      <div id="selected-title">選択されたタイトル</div>
-      <div id="selected-time">選択された所要時間</div>
-      <div id="selected-persons">選択された人数</div>
-      <div id="selected-content">選択された詳細</div>
+    <div class="center-top">
+      <% unless current_user.nil? %>
+      <div class='training-select', id="trainings", data-trainings="<%= @trainings.to_json %>">
+        <div class="selected-left">
+          タイトル<div id="selected-title", class="selected-title">　</div>
+          所要時間（分）<div id="selected-time", class="selected-time">　</div>
+          必要人数（人）<div id="selected-persons", class="selected-persons">　</div>
+        </div>
+        <div class="selected-right">
+          詳細<div id="selected-content", class="selected-content"></div>
+        </div>
+      </div>
+      <% end %>
     </div>
     <%#中央メイン上部%>
     <%#中央メイン下部%>
-    <div class='training-post'>
-      <% if current_user %>
-        <div class='training-post-left'>
-          <%= form_with model: @training, url: trainings_path, local: true do |f| %>
-          <div class='training-title'>
-            <%= f.label :タイトル %>
-            <%= f.text_field :title, class:"field" %>
+    <div class="center-bottom">
+      <% unless current_user.nil? %>
+        <div class='training-post'>
+          <div class='training-post-left'>
+            <%= form_with model: @training, url: trainings_path, local: true do |f| %>
+            <div class='training-title'>
+              <%= f.label :タイトル %>
+              <%= f.text_field :title, class:"field" %>
+            </div>
+            <div class='training-time'>
+              <%= f.label :所用時間 %>
+              <%= f.text_field :time, class:"mini-field" %>分
+            </div>
+            <div class='training-persons'>
+              <%= f.label :必要人数 %>
+              <%= f.text_field :persons, class:"mini-field" %>人
+            </div>
           </div>
-          <div class='training-time'>
-            <%= f.label :所用時間 %>
-            <%= f.text_field :time, class:"mini-field" %>分
+          <div class='training-post-center'>
+            <div class="training-content">
+              <%= f.label :詳細 %><br>
+              <%= f.text_area :content, class:"text" %>
+            </div>
+            <div class="post-button">
+              <%= f.submit "投稿する", class:"post" %>
+            </div>
           </div>
-          <div class='training-persons'>
-            <%= f.label :必要人数 %>
-            <%= f.text_field :persons, class:"mini-field" %>人
-          </div>
+          <% end %>
         </div>
-        <div class='training-post-center'>
-          <%= f.label :詳細 %><br>
-          <%= f.text_area :content, class:"text" %>
-          <div class="post-button">
-            <%= f.submit "投稿する", class:"post" %>
-          </div>
-        </div>
-        <% end %>
       <% end %>
     </div>
     <%#/中央メイン下部%>

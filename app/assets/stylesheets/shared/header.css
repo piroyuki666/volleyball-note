@@ -1,34 +1,15 @@
 .top-page-header{
-  width: 1200px;
+  width: 1000px;
   height: 60px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  background-color: rgb(89, 93, 139);
+  background-color: rgb(174, 183, 130);
   color: azure;
 }
-/*ヘッダー左側*/
-.header-left{
-  width: 300px;
-  display: flex;
-}
-.user-name{
-  padding-left: 20px;
-  text-align: center;
-}
-.logout-button{
-  text-decoration: none;
-  background-color: brown;
-  border: 2px solid;
-  color: azure;
-  margin: auto;
-}
-/*ヘッダー右側*/
-.header-right{
-  width: 900px;
-  display: flex;
-  flex-direction: column;
-}
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 .app-name{
   font-size: 40px;
   text-align: center;
+  font-family: 'VolleyBall-Note', cursive;
 }
