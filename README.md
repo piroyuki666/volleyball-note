@@ -52,6 +52,11 @@ https://docs.google.com/spreadsheets/d/1oK53YT8ZJBIgf9_A8CWFAB0SG00TxvU1QlmziTLE
 
 # ローカルでの動作方法
 以下のコマンドを順に実行。
-
+% git clone https://github.com:piroyuki666/volleyball-note.git
+% cd xxxx
+% bundle install
+% yarn install
 
 # 工夫したポイント
+初めてのアプリ作成で今の自分が覚えたい機能に焦点を当て作成しようと考えました。その覚えたい機能というのがJavascript、Jqueryでした。
+非同期通信のメリットを活かし、トップページで完結する事で通信回数をユーザー切り替え時の１度だけにしました。
