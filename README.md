@@ -14,10 +14,10 @@ VOLLEYBALL-NOTE
 - https://volleyball-note.herokuapp.com/
 
 # テスト用アカウント
-- Basic認証ID : 
-- Basic認証パスワード : 
-- ユーザー名 : 
-- パスワード : 
+- Basic認証ID : piromin
+- Basic認証パスワード :6666 
+- ユーザー名 : user1
+- パスワード : 1111
 
 # 利用方法
 1. トップページ左下から新規登録orログインを行う
@@ -31,12 +31,9 @@ VOLLEYBALL-NOTE
 要件定義シート↓↓
 https://docs.google.com/spreadsheets/d/1oK53YT8ZJBIgf9_A8CWFAB0SG00TxvU1QlmziTLEVbA/edit#gid=982722306
 
-# 実装した機能についての画像やGIFおよびその説明
-
-
 # 実装予定の機能
-現在、画像投稿機能を実装中。
-今後、投稿済み練習メニューの編集、削除機能をJavascriptを用いた非同期通信にて実装予定。
+- 現在、画像投稿機能を実装中。
+- 今後、投稿済み練習メニューの編集、削除機能をJavascriptを用いた非同期通信にて実装予定。
 
 # データベース設計
 ![画像の説明](app/assets/images/er.png "ER図")
@@ -58,5 +55,5 @@ https://docs.google.com/spreadsheets/d/1oK53YT8ZJBIgf9_A8CWFAB0SG00TxvU1QlmziTLE
 % yarn install
 
 # 工夫したポイント
-初めてのアプリ作成で今の自分が覚えたい機能に焦点を当て作成しようと考えました。その覚えたい機能というのがJavascript、Jqueryでした。
-非同期通信のメリットを活かし、トップページで完結する事で通信回数をユーザー切り替え時の１度だけにしました。
+- 初めてのアプリ作成で今の自分が覚えたい機能に焦点を当て作成しようと考えました。その覚えたい機能というのがJavascript、Jqueryでした。
+- 非同期通信のメリットを活かし、トップページで完結する事で通信回数をユーザー切り替え時の１度だけにしました。
