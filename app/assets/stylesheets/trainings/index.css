@@ -117,24 +117,26 @@ li{
   height: 120px;
   width: 150px;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   text-align: left;
   margin: 20px;
 }
 .selected-title{
+  height: 24px;
   width: 110px;
   background-color: white;
   border: 1px solid black;
   border-radius: 2px;
 }
 .selected-time{
+  height: 24px;
   width: 60px;
   background-color: white;
   border: 1px solid black;
   border-radius: 2px;
 }
 .selected-persons{
+  height: 24px;
   width: 60px;
   background-color: white;
   border: 1px solid black;
