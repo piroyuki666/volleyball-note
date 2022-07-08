@@ -1,11 +1,31 @@
-.top-main-upper{
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+
+.homepage-upper{
   width: 1000px;
   height: 150px;
   border: 1px solid black;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  text-align: center;
 }
-
-.top-main-lower{
+.homepage-lower{
   width: 1000px;
   height: 400px;
   border: 1px solid black;
+  display: flex;
+}
+.homepage-lower-left{
+  width: 460px;
+  height: 360px;
+  border-radius: 30px;
+  margin: 20px;
+  background-color: rgb(250, 249, 223);
+  text-align: center;
+}
+.homepage-lower-right{
+  width: 460px;
+  height: 360px;
+  border-radius: 30px;
+  margin: 20px;
+  background-color: antiquewhite;
+  text-align: center;
 }
