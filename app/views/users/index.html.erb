@@ -10,6 +10,44 @@
 <div class="homepage-lower">
   <div class="homepage-lower-left">
     <p>個人ノートを使う方はこちらから</p>
+    <p>新規登録フォーム（新しくユーザー登録する方）</p>
+    <%= form_with model: @user, url: users_path, local: true do |f| %>
+      <div>
+        <%= f.label :ユーザー名　　　 %>
+        <%= f.text_field :name, class:"field" %>
+      </div>
+      <div>
+        <%= f.label :パスワード　　　 %>
+        <%= f.password_field :password, class:"field" %>
+      </div>
+      <div>
+        <%= f.label :パスワード再入力 %>
+        <%= f.password_field :password_confirmation, class:"field" %>
+      </div>
+      <div>
+        <%= f.label :年齢 %>
+        <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"category-box", id:"user-age"}) %>
+        <%= f.label :性別 %>
+        <%= f.collection_select(:sex_id, Sex.all, :id, :name, {}, {class:"category-box", id:"user-sex"}) %>
+      </div>
+      <div>
+        <%= f.submit "新規登録", class:"post" %>
+      </div>
+    <% end %>
+    <p>ログインフォーム（既存ユーザーの方）</p>
+      <%= form_with model: @user, url: login_path, method: :post, local: true do |f| %>
+        <div>
+          <%= f.label :ユーザー名　　　 %>
+          <%= f.text_field :name, class:"field" %>
+        </div>
+        <div>
+          <%= f.label :パスワード　　　 %>
+          <%= f.password_field :password, class:"field" %>
+        </div>
+        <div>
+          <%= f.submit "ログイン", class:"post" %>
+        </div>
+      <% end %>
   </div>
   <div class="homepage-lower-right">
     <p>チームノートを使う方はこちらから</p>
