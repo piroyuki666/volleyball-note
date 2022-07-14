@@ -1,7 +1,6 @@
 class TrainingsController < ApplicationController
 
   def index
-    @user = User.new
     @training = Training.new
     @trainings = Training.where(user_id: session[:user_id])
   end

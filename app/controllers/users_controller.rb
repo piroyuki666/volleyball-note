@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
   def index
-    
+    @user = User.new
   end
+
   def create
     user = User.new(user_params)
-    @trainings = Training.where(user_id: session[:user_id])
     if user.save
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to trainings_path
     else
-      render "trainings/index"
+      render "users/index"
     end
   end
 
