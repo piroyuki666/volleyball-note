@@ -20,27 +20,34 @@
       </div>
     </div>
     <div class='left-bottom'>
-      <div class='user-new'>
+      <div class='left-bottomーupper'>
         <div class="user-name">
           ようこそ　<%= current_user.name %>　さん
         </div>
+        <div class="user-age">
+          <%= current_user.age.name %>
+        </div>
+        <div class="user-sex">
+          <%= current_user.sex.name_id %>
+        </div>
         <%= link_to "ログアウト", logout_path, method: :delete, class:"logout-button" %>
       </div>
-      <div class='user-login'>
-        <div class="user-new-title">別ユーザーでログイン</div>
-        <%= form_with model: @user, url: login_path, method: :post, local: true do |f| %>
-        <div>
-          <%= f.label :ユーザー名　　　 %>
-          <%= f.text_field :name, class:"field" %>
+      <div class='left-bottomーlower'>
+        <div class="another-user-login">別ユーザーでログイン
+          <%= form_with model: @user, url: login_path, method: :post, local: true do |f| %>
+          <div>
+            <%= f.label :ユーザー名　　　 %>
+            <%= f.text_field :name, class:"field" %>
+          </div>
+          <div>
+            <%= f.label :パスワード　　　 %>
+            <%= f.password_field :password, class:"field" %>
+          </div>
+          <div>
+            <%= f.submit "ログイン", class:"post" %>
+          </div>
+          <% end %>
         </div>
-        <div>
-          <%= f.label :パスワード　　　 %>
-          <%= f.password_field :password, class:"field" %>
-        </div>
-        <div>
-          <%= f.submit "ログイン", class:"post" %>
-        </div>
-        <% end %>
       </div>
     </div>
   </div>
