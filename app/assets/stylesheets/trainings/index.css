@@ -15,8 +15,9 @@ textarea {
   height:100px;
 }
 li{
-  margin-top: 15px;
+  margin-top: 10px;
 }
+
 /*左のサイドバー*/
 .left-contents{
   width: 300px;
@@ -31,41 +32,43 @@ li{
   background-size: 7em 7em, 5em 5em, 3em 3em, 1em 1em;
   background-color: #F5E9BE;
 }
+
 /*左側上部*/
 .left-top{
   height: 280px;
   width: 300px;
   border-bottom: 1px solid black;
 }
+
 .note-name{
   height: 30px;
   border-bottom: 1px solid black;
   text-align: center;
   margin-top: 5px;
 }
+
 .training-menu{
   height: 300px;
   margin: 0 auto 0 20px;
 }
-/*/左側上部*/
 
 /*左側下部*/
 .left-bottom{
   height: 270px;
 }
 
-/*新規登録フォーム*/
-.user-new{
+.left-bottomーupper{
   height: 150px;
   display: flex;
   flex-direction: column;
   text-align: center;
   border-bottom: 1px solid black;
 }
-/*ログインユーザー名とログアウトボタン*/
+
 .user-name{
   padding: 5px;
 }
+
 .logout-button{
   text-decoration: none;
   background-color: rgb(182, 183, 242);
@@ -77,18 +80,17 @@ li{
   margin-right: 5px;
 }
 
-/*ログインフォーム*/
-.user-login{
+.left-bottomーlower{
   height: 120px;
   padding-left: 20px;
   display: flex;
   flex-direction: column;
 }
-.user-new-title{
+
+.another-user-login{
   display: flex;
   flex-direction: column;
 }
-/*/左側下部*/
 /*/左のサイドバー*/
 
 /*中央*/
